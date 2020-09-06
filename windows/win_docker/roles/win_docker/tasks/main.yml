@@ -5,15 +5,27 @@
   set_fact:
     ps_install:
       # install nuget package provider
-      - 'Start-Job -Scriptblock { Install-PackageProvider -Name NuGet -Force } | Receive-Job -Wait'
+      - >-
+        Start-Job -Scriptblock { Install-PackageProvider -Name NuGet -Force } |
+        Receive-Job -Wait
       # install powershellget module
-      - 'Start-Job -Scriptblock { Install-Module -Name PowershellGet -Force } | Receive-Job -Wait'
+      - >-
+        Start-Job -Scriptblock { Install-Module -Name PowershellGet -Force } |
+        Receive-Job -Wait
       # update powershellget
-      - 'Start-Job -Scriptblock { Update-Module -Name PowerShellGet -Force } | Receive-Job -Wait'
+      - >-
+        Start-Job -Scriptblock { Update-Module -Name PowerShellGet -Force } |
+        Receive-Job -Wait
       # install DockerMsftProvider
-      - 'Start-Job -Scriptblock { Install-Module -Name DockerMsftProvider -Repository PSGallery -Force } | Receive-Job -Wait'
+      - >-
+        Start-Job -Scriptblock {
+        Install-Module -Name DockerMsftProvider -Repository PSGallery -Force } |
+        Receive-Job -Wait
       # install latest version of docker
-      - 'Start-job -Scriptblock { Install-Package -Name docker -ProviderName DockerMsftProvider -Force } | Receive-job -Wait'
+      - >-
+        Start-job -Scriptblock {
+        Install-Package -Name docker -ProviderName DockerMsftProvider -Force } |
+        Receive-job -Wait
 
 - name: install win feature
   win_feature:
@@ -59,4 +71,4 @@
     path: '{{ win_svc_path | default(omit,true) }}'
     start_mode: '{{ win_svc_start_mode | default(omit,true) }}'
   register: svc_result
-
+...

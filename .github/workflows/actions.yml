@@ -1,3 +1,4 @@
+---
 # actions yaml for repo pipeline
 name: CICD
 
@@ -8,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout repo
-      uses: actions/checkout@master
-    
-    - name: ansible-lint
-      uses: ansible/ansible-lint-action@master
-      env:
-        ACTION_PLAYBOOK_NAME: |
-          "**/**/playbooks/*.yml"
+      - name: checkout repo
+        uses: actions/checkout@master
+
+      - name: ansible-lint
+        uses: ansible/ansible-lint-action@master
+        env:
+          ACTION_PLAYBOOK_NAME: |
+            "**/**/playbooks/*.yml"
 
   yamllint:
     runs-on: ubuntu-latest
@@ -28,3 +29,4 @@ jobs:
         uses: karancode/yamllint-github-action@master
         with:
           yamllint_strict: false
+...
