@@ -3,7 +3,7 @@ name: CICD
 on:
   push:
     branches: [ master ]
-  pull_requests:
+  pull_request:
     branchese: [ master ]
 
 jobs:
