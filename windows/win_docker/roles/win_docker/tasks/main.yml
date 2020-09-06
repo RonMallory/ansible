@@ -1,0 +1,62 @@
+---
+# tasks file for Win_Docker
+
+- name: create install var
+  set_fact:
+    ps_install:
+      # install nuget package provider
+      - 'Start-Job -Scriptblock { Install-PackageProvider -Name NuGet -Force } | Receive-Job -Wait'
+      # install powershellget module
+      - 'Start-Job -Scriptblock { Install-Module -Name PowershellGet -Force } | Receive-Job -Wait'
+      # update powershellget
+      - 'Start-Job -Scriptblock { Update-Module -Name PowerShellGet -Force } | Receive-Job -Wait'
+      # install DockerMsftProvider
+      - 'Start-Job -Scriptblock { Install-Module -Name DockerMsftProvider -Repository PSGallery -Force } | Receive-Job -Wait'
+      # install latest version of docker
+      - 'Start-job -Scriptblock { Install-Package -Name docker -ProviderName DockerMsftProvider -Force } | Receive-job -Wait'
+
+- name: install win feature
+  win_feature:
+    name: '{{ feat_name }}'
+    source: '{{ feat_local_src | default(omit,true) }}'
+    include_management_tools: '{{ feat_mgmt_tool | default(omit,true) }}'
+    include_sub_features: '{{ feat_sub_feat | default(omit,true)}}'
+    state: '{{ feat_state }}'
+  register: win_feature
+
+- name: reboot server
+  win_reboot:
+  when: win_feature.reboot_required
+
+- name: check providers
+  win_command: powershell.exe -
+  args:
+    stdin: 'Get-PackageProvider -ListAvailable'
+  register: provider_results
+
+- debug: var=provider_results
+
+- name: install dependencies 
+  win_command: powershell.exe -
+  args:
+    stdin: '{{ item }}'
+  register: install_results
+  with_items: '{{ ps_install }}'
+
+- name: print install results
+  debug:
+    var: install_results
+
+- name: reboot server
+  win_reboot:
+
+- name: configure docker service
+  win_service:
+    name: '{{ win_svc_name | mandatory }}'
+    state: '{{ win_svc_state | mandatory }}'
+    username: '{{ win_svc_user | default(omit,true) }}'
+    password: '{{ win_svc_pass | default(omit,true) }}'
+    path: '{{ win_svc_path | default(omit,true) }}'
+    start_mode: '{{ win_svc_start_mode | default(omit,true) }}'
+  register: svc_result
+
