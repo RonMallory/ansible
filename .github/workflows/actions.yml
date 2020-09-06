@@ -16,4 +16,3 @@ jobs:
       env:
         ACTION_PLAYBOOK_NAME: |
           "**/**/playbooks/*.yml"
-          "windows/win_docker/playbooks/win_docker.yml"

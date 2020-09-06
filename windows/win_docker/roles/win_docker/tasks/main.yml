@@ -20,7 +20,7 @@
     name: '{{ feat_name }}'
     source: '{{ feat_local_src | default(omit,true) }}'
     include_management_tools: '{{ feat_mgmt_tool | default(omit,true) }}'
-    include_sub_features: '{{ feat_sub_feat | default(omit,true)}}'
+    include_sub_features: '{{ feat_sub_feat | default(omit,true) }}'
     state: '{{ feat_state }}'
   register: win_feature
 
@@ -36,7 +36,7 @@
 
 - debug: var=provider_results
 
-- name: install dependencies 
+- name: install dependencies
   win_command: powershell.exe -
   args:
     stdin: '{{ item }}'
