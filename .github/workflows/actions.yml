@@ -26,5 +26,5 @@ jobs:
 
       - name: 'Yamllint'
         uses: karancode/yamllint-github-action@master
-          with:
-            yamllint_strict: false
+        with:
+          yamllint_strict: false
