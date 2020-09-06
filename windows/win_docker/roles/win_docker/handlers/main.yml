@@ -5,4 +5,4 @@
 - name: win_reboot
   win_reboot:
     reboot_timeout: 3600
-
+...

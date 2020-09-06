@@ -1,36 +1,15 @@
-### REQUIRED
-
+---
 namespace: windows
-
 name: win_docker
-
 version: 1.0.0
-
 readme: README.md
-
-# A list of the collection's content authors. Can be just the name or in the format 'Full Name <email> (url)
-# @nicks:irc/im.site#channel'
 authors:
   - ronnymallory@gmail.com
-
-### OPTIONAL but strongly recommended
-
-# A short summary description of the collection
 description: install docker on windows host.
-
 license:
   - GNU3.0
-
-# A list of tags you want to associate with the collection for indexing/searching. A tag name has the same character
-# requirements as 'namespace' and 'name'
 tags:
   - windows
   - docker
-
-
-# The URL of the originating SCM repository
 repository: https://github.com/RonMallory/ansible
-
-
-# The URL to the collection issue tracker
 issues: https://github.com/RonMallory/ansible/issues
