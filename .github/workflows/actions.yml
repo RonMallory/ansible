@@ -1,12 +1,15 @@
 # actions yaml for repo pipeline
 name: CICD
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branchese: [ master ]
+  push: [push, pull_request]
 
 jobs:
   ansible-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@2
+
     - name: ansible-lint
-      uses: ansible/ansible-lint-action@v4.1.0.post0
+      uses: ansible/ansible-lint-action@master
+      with:
+        targets: **/**/playbooks/*.yml
