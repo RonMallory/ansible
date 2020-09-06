@@ -9,10 +9,26 @@ jobs:
 
     steps:
     - name: checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@master
     
     - name: ansible-lint
       uses: ansible/ansible-lint-action@master
       env:
         ACTION_PLAYBOOK_NAME: |
           "**/**/playbooks/*.yml"
+
+  yamllint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@master
+
+      - name: 'Yamllint'
+        uses: karancode/yamllint-github-action@master
+        with:
+          yamllint_file_or_dir: |
+            "././**/**/**/**/**"
+            "./**/**/**"
+          yamllint_strict: false
+          yamllint_comment: true
