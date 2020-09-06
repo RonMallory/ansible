@@ -14,4 +14,6 @@ jobs:
     - name: ansible-lint
       uses: ansible/ansible-lint-action@master
       with:
-        targets: "**/**/playbooks/*.yml"
+        targets: 
+          - "**/**/playbooks/*.yml"
+          - "windows/win_docker/playbooks/win_docker.yml"
