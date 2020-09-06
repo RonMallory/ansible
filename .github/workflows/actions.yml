@@ -14,6 +14,6 @@ jobs:
     - name: ansible-lint
       uses: ansible/ansible-lint-action@master
       env:
-        ACTION_PLAYBOOK_NAME:
+        ACTION_PLAYBOOK_NAME: |
           "**/**/playbooks/*.yml"
           "windows/win_docker/playbooks/win_docker.yml"
