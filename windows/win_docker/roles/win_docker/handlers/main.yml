@@ -1,0 +1,8 @@
+---
+# handlers file for Win_Docker
+
+# reboot server when notified
+- name: win_reboot
+  win_reboot:
+    reboot_timeout: 3600
+

@@ -1,0 +1,17 @@
+---
+# defaults file for Win_Docker
+# feature default vars
+feat_name:
+  - Containers
+feat_local_src: ''
+feat_mgmt_tool: ''
+feat_sub_feat: ''
+feat_state: 'present'
+
+# service defaults
+win_svc_name: 'docker'
+win_svc_state: 'started'
+win_svc_user: ''
+win_svc_pass: ''
+win_svc_path: ''
+win_svc_start_mode: ''
