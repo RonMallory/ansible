@@ -5,7 +5,7 @@ name: CICD
 on: [push, pull_request]
 
 jobs:
-  
+
   commitlint:
     runs-on: ubuntu-latest
     steps:
@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: wagoid/commitlint-github-action@v2
-  
+
   ansible-lint:
     runs-on: ubuntu-latest
 
