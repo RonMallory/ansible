@@ -1,0 +1,27 @@
+{
+  "name": "ansible",
+  "version": "1.0.0",
+  "description": "repository dependancies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonMallory/ansible.git"
+  },
+  "keywords": [
+    "ansible",
+    "windows"
+  ],
+  "author": "Ron Mallory",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/RonMallory/ansible/issues"
+  },
+  "homepage": "https://github.com/RonMallory/ansible#readme",
+  "dependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^11.0.0"
+  }
+}
