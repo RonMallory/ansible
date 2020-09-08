@@ -23,5 +23,8 @@
   "dependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^11.0.0"
+  },
+  "devDependencies": {
+    "semantic-release": "^17.1.1"
   }
 }
