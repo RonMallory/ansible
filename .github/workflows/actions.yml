@@ -7,6 +7,7 @@ on: [push, pull_request]
 jobs:
 
   semantic_release_dryrun:
+    runs-on: ubuntu-latest
     steps:
        - name: Checkout
          uses: actions/checkout@v2
