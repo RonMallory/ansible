@@ -52,4 +52,12 @@ jobs:
         uses: karancode/yamllint-github-action@master
         with:
           yamllint_strict: false
+
+  publish:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/master'
+    - name: Build and Deploy Collection
+      uses: artis3n/ansible_galaxy_collection@v2
+      with:
+        api_key: '${{ secrets.GALAXY_API_KEY }}'
 ...
