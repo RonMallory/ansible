@@ -10,7 +10,7 @@ Install required Software
 * ansible
 * vagrant
 * virtual box
-* commit-lint COMING SOON
+* commit-lint
 
 ## Vagrant
 
