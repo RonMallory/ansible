@@ -1,0 +1,17 @@
+---
+# actions to run on pull_request to publish to ansible-galaxy
+
+name: publish
+
+on: [pull_request]
+
+jobs:
+
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Deploy Collection
+        uses: artis3n/ansible_galaxy_collection@v2
+        with:
+          api_key: '${{ secrets.GALAXY_API_KEY }}'
+...
