@@ -6,6 +6,6 @@ plugins:
   - "@semantic-release/github"
   - "@semantic-release/changelog"
 release:
-   branches:
-     - "master"
+  branches:
+    - "master"
 ...
