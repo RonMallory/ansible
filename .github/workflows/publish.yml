@@ -6,7 +6,7 @@ name: publish
 on:
   release:
     types:
-      - published
+      - released
 jobs:
 
   publish_win_docker:
