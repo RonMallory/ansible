@@ -1,5 +1,5 @@
 ---
-namespace: windows
+namespace: ronmallory
 name: win_docker
 version: 1.0.0
 readme: README.md
@@ -11,5 +11,5 @@ license:
 tags:
   - windows
   - docker
-repository: https://github.com/RonMallory/ansible
-issues: https://github.com/RonMallory/ansible/issues
+repository: https://github.com/RonMallory/ansible-collections
+issues: https://github.com/RonMallory/ansible-collections/issues
