@@ -2,7 +2,7 @@
 galaxy_info:
   author: Ron Mallory
   description: Ansible automation enthusiast
-  license: GPL-3.0
+  license: AGPL-3.0-or-later
 
   min_ansible_version: 2.9
 
