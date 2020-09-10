@@ -7,7 +7,7 @@ on: [pull_request]
 
 jobs:
 
-  publish:win_docker:
+  publish_win_docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
