@@ -1,5 +1,5 @@
 ---
-namespace: windows
+namespace: ronmallory
 name: win_docker
 version: 1.0.0
 readme: README.md
@@ -7,9 +7,9 @@ authors:
   - ronnymallory@gmail.com
 description: install docker on windows host.
 license:
-  - GNU3.0
+  - AGPL-3.0-or-later
 tags:
   - windows
   - docker
-repository: https://github.com/RonMallory/ansible
-issues: https://github.com/RonMallory/ansible/issues
+repository: https://github.com/RonMallory/ansible-collections
+issues: https://github.com/RonMallory/ansible-collections/issues
