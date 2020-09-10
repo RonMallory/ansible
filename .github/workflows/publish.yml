@@ -7,12 +7,14 @@ on: [pull_request]
 
 jobs:
 
-  publish:
+  publish:win_docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@master
       - name: Build and Deploy Collection
         uses: artis3n/ansible_galaxy_collection@v2
         with:
           api_key: '${{ secrets.GALAXY_API_KEY }}'
-          collection_dir: './ronmallory'
+          collection_dir: './ronmallory/win_docker'
 ...
