@@ -4,6 +4,11 @@
 name: publish
 
 on: [pull_request]
+  push:
+    paths:
+      - ./ronmallory/win_docker/*
+      - ./ronmallory/win_docker/**/*
+      - ./ronmallory/win_docker/**/**/*
 
 jobs:
 
