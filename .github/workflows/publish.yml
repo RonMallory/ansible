@@ -5,8 +5,7 @@ name: publish
 
 on:
   watch:
-    types:
-      - released
+    types: [created, released]
 jobs:
 
   publish_win_docker:
