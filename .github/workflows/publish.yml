@@ -4,7 +4,9 @@
 name: publish
 
 on:
-  release:
+  push:
+    branches:
+      - master
 jobs:
 
   publish_win_docker:
