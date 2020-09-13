@@ -1,0 +1,12 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+
+    # import role
+    - name: import role
+      import_role:
+        name: win_docker
+      vars:
+        win_svc_name: 'docker'
+        win_svc_state: 'started'
