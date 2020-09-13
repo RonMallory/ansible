@@ -2,6 +2,7 @@
 namespace: ronmallory
 name: win_docker
 version: 1.6.3
+readme: README.md
 authors:
   - ronnymallory@gmail.com
 description: install docker on windows host.
